@@ -1,0 +1,42 @@
+project:
+  name: recommendation-pipeline
+
+dataset:
+  name: MovieLens Latest Small
+  paths:
+    movies: data/raw/movies.csv
+    ratings: data/raw/ratings.csv
+
+validation:
+  rating_min: 0.5
+  rating_max: 5.0
+  errors_path: data/errors
+
+preparation:
+  split_strategy: latest_interaction_per_user
+  paths:
+    processed: data/processed
+
+features:
+  output_path: data/features
+  catalog_path: reports/feature_catalog.csv
+
+models:
+  output_path: models
+  popularity:
+    min_ratings: 5
+  collaborative_filtering:
+    similarity_metric: cosine
+    positive_rating_threshold: 4.0
+    max_seed_movies: 10
+
+recommendations:
+  default_count: 5
+
+evaluation:
+  k: 5
+  report_path: reports/model_evaluation.csv
+
+mlflow:
+  tracking_uri: sqlite:///mlflow.db
+  experiment_name: MovieLens_Recommendation_System
