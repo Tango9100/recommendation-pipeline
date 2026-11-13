@@ -1,0 +1,31 @@
+MOVIELENS DATA VALIDATION REPORT
+========================================
+
+Missing values in movies:
+movieId    0
+title      0
+genres     0
+
+Missing values in ratings:
+userId       0
+movieId      0
+rating       0
+timestamp    0
+
+Duplicate rows in movies: 0
+
+Duplicate rows in ratings: 0
+
+Movies columns validation: True
+
+Ratings columns validation: True
+
+Invalid movie field types: 0
+
+Invalid rating field types: 0
+
+Invalid ratings (outside 0.5-5.0 range or non-numeric): 0
+
+Invalid movie references in ratings: 0
+
+Invalid timestamps in ratings: 0
