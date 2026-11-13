@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title description">
+  <title id="title">Movie recommendation pipeline architecture</title>
+  <desc id="description">An orchestrated workflow from raw MovieLens data through validation, preparation, feature generation, model training, evaluation, and MLflow tracking.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .stage { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .output { fill: #f0fdf4; stroke: #16a34a; stroke-width: 2; rx: 12; }
+      .title { font: 700 28px Arial, sans-serif; fill: #0f172a; }
+      .label { font: 700 17px Arial, sans-serif; fill: #0f172a; }
+      .text { font: 14px Arial, sans-serif; fill: #334155; }
+      .arrow { stroke: #334155; stroke-width: 2.5; marker-end: url(#arrow); }
+      .orchestrator { fill: #1e293b; rx: 12; }
+      .white { fill: #fff; font: 700 17px Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect width="1200" height="650" fill="#ffffff"/>
+  <text x="600" y="48" text-anchor="middle" class="title">End-to-End Movie Recommendation Pipeline</text>
+  <rect x="80" y="75" width="1040" height="48" class="orchestrator"/>
+  <text x="600" y="105" text-anchor="middle" class="white">Python orchestrator · run_pipeline.py · ordered stages with fail-fast behavior</text>
+
+  <rect x="55" y="175" width="190" height="115" class="stage"/>
+  <text x="150" y="207" text-anchor="middle" class="label">Raw data</text>
+  <text x="150" y="235" text-anchor="middle" class="text">movies.csv</text>
+  <text x="150" y="258" text-anchor="middle" class="text">ratings.csv</text>
+
+  <rect x="285" y="175" width="190" height="115" class="stage"/>
+  <text x="380" y="207" text-anchor="middle" class="label">Ingest &amp; validate</text>
+  <text x="380" y="235" text-anchor="middle" class="text">Schema, types, nulls,</text>
+  <text x="380" y="258" text-anchor="middle" class="text">ranges, references</text>
+
+  <rect x="515" y="175" width="190" height="115" class="stage"/>
+  <text x="610" y="207" text-anchor="middle" class="label">Prepare</text>
+  <text x="610" y="235" text-anchor="middle" class="text">Clean and standardize</text>
+  <text x="610" y="258" text-anchor="middle" class="text">Per-user time split</text>
+
+  <rect x="745" y="175" width="190" height="115" class="stage"/>
+  <text x="840" y="207" text-anchor="middle" class="label">Transform &amp; features</text>
+  <text x="840" y="235" text-anchor="middle" class="text">User, item, interaction</text>
+  <text x="840" y="258" text-anchor="middle" class="text">features and catalog</text>
+
+  <rect x="975" y="175" width="190" height="115" class="stage"/>
+  <text x="1070" y="207" text-anchor="middle" class="label">Train models</text>
+  <text x="1070" y="235" text-anchor="middle" class="text">Popularity baseline</text>
+  <text x="1070" y="258" text-anchor="middle" class="text">Item-based CF</text>
+
+  <line x1="245" y1="232" x2="277" y2="232" class="arrow"/>
+  <line x1="475" y1="232" x2="507" y2="232" class="arrow"/>
+  <line x1="705" y1="232" x2="737" y2="232" class="arrow"/>
+  <line x1="935" y1="232" x2="967" y2="232" class="arrow"/>
+
+  <line x1="1070" y1="290" x2="1070" y2="365" class="arrow"/>
+  <rect x="890" y="385" width="275" height="120" class="stage"/>
+  <text x="1027" y="420" text-anchor="middle" class="label">Evaluate</text>
+  <text x="1027" y="448" text-anchor="middle" class="text">Precision@K, Recall@K, NDCG@K</text>
+  <text x="1027" y="472" text-anchor="middle" class="text">Coverage and Diversity</text>
+
+  <line x1="890" y1="445" x2="835" y2="445" class="arrow"/>
+  <rect x="535" y="385" width="285" height="120" class="output"/>
+  <text x="677" y="420" text-anchor="middle" class="label">Deliverables</text>
+  <text x="677" y="448" text-anchor="middle" class="text">CSV results, feature catalog, models</text>
+  <text x="677" y="472" text-anchor="middle" class="text">Validation report and error records</text>
+
+  <line x1="1027" y1="505" x2="1027" y2="555" class="arrow"/>
+  <rect x="890" y="565" width="275" height="58" class="output"/>
+  <text x="1027" y="600" text-anchor="middle" class="label">MLflow: parameters, metrics, artifacts</text>
+
+  <text x="55" y="435" class="text">Settings: config/config.yml</text>
+  <text x="55" y="463" class="text">Storage: project-local CSV files</text>
+  <text x="55" y="491" class="text">Experiment store: SQLite</text>
+</svg>
