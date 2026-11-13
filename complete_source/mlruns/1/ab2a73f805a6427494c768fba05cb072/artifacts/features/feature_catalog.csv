@@ -1,0 +1,16 @@
+feature,entity,type,description
+userId,User,Integer,MovieLens user identifier; no profile attributes are provided
+user_avg_rating,User,Numeric,Average rating given by the user
+user_activity_count,User,Integer,Total number of user interactions
+user_unique_movies,User,Integer,Number of unique movies rated by user
+days_since_last_interaction,User,Integer,Days since user's most recent interaction
+movieId,Movie,Integer,MovieLens item identifier
+item_popularity,Movie,Integer,Total number of ratings received
+item_unique_users,Movie,Integer,Number of unique users rating the movie
+item_avg_rating,Movie,Numeric,Average rating received by movie
+genres,Movie,Categorical,Movie genre information
+rating,Interaction,Numeric,Explicit rating supplied by a user for a movie
+interaction_time,Interaction,Datetime,UTC timestamp converted to a datetime value
+interaction_hour,Interaction,Integer,Hour of day when the interaction occurred
+interaction_day_of_week,Interaction,Integer,"Day of week when the interaction occurred, Monday=0"
+interaction_month,Interaction,Integer,Month when the interaction occurred

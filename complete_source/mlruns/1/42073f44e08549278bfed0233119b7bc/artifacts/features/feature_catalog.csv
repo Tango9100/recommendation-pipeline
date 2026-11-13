@@ -1,0 +1,9 @@
+feature,entity,type,description
+user_avg_rating,User,Numeric,Average rating given by the user
+user_activity_count,User,Integer,Total number of user interactions
+user_unique_movies,User,Integer,Number of unique movies rated by user
+days_since_last_interaction,User,Integer,Days since user's most recent interaction
+item_popularity,Movie,Integer,Total number of ratings received
+item_unique_users,Movie,Integer,Number of unique users rating the movie
+item_avg_rating,Movie,Numeric,Average rating received by movie
+genres,Movie,Categorical,Movie genre information
